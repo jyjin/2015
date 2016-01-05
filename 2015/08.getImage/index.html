@@ -1,0 +1,78 @@
+<!DOCTYPE HTML>
+<html lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+		<title>获取图片的原尺寸</title>
+		<style type="text/css">
+			.bg{
+				width: 1000px;
+				height: 300px;
+				background: url(ssliu.jpg) no-repeat;
+			}
+			#txt{
+				width: 400px;
+				height: 80px;
+			}
+		</style>
+	</head>
+	<body>
+		<textarea id='txt'></textarea>
+		<div class="bg"></div>
+		<img src="win.png"/>
+		<script type="text/javascript" src='../../common/base.js'></script>
+		<script type="text/javascript" src='../../common/jquery.min.js'></script>
+		<script type="text/javascript">
+			//img可以直接获取
+			function getImgInfo(){
+				var im2 = new Image();
+				im2.src = document.getElementsByTagName('img')[0].src;
+				console.log(im2.width+'---'+im2.height+'\n---------------------');
+			};
+			//获取图片原信息：
+			//	创建一个新img元素，绑定src
+			//	重新渲染到页面（要等到加载完成）
+			//	new Image()对象
+			//	绑定src所得即可
+			function setBackgroundImg(){
+				var im = document.createElement('img');
+				var bg = document.getElementsByClassName('bg')[0];
+				im.setAttribute('id','_img');
+				im.style.display = 'none';
+				im.src = document.defaultView.getComputedStyle(bg,null).getPropertyValue('background-image').replace('url(','').replace(')','');
+				document.body.appendChild(im);
+			};
+
+			//等待图片加载完成
+			//获取宽高
+			function getBackgroundImgInfo(){
+			
+				window.onload=function(){
+					var im = new Image();
+					im.src = document.getElementById('_img').src;
+					console.log(im.width+'---'+im.height);
+				}
+			}
+
+			//textArea按行获取
+			//张三 BEST20140012 23 行软 科大讯飞 望江西路666号
+			//张三 BEST20147897 24 平嵌 科大讯飞 望江西路666号
+			function textArea_lineReader(){
+
+				var t = document.getElementById('txt');
+				t.onchange =function(){
+					var v = t.value;
+					var a = t.value.split('\n');
+					console.log(a+'\n-----------------------');
+				}
+			}
+
+			document.ready(function(){
+				getImgInfo();
+				setBackgroundImg();
+				getBackgroundImgInfo();
+				textArea_lineReader();
+			});
+			
+		</script>
+	</body>
+</html>

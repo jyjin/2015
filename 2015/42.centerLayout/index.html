@@ -1,0 +1,84 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>水平垂直居中</title>
+    <style>
+    /*水平垂直居中*/
+    
+    .center {
+        display: inline-block;
+        vertical-align: middle;
+        text-align: center;
+        white-space: nowrap;
+    }
+    
+    .center:before {
+        content: '';
+        height: 100%;
+        display: inline-block;
+        vertical-align: middle;
+    }
+    
+    .centered {
+        display: inline-block;
+        vertical-align: middle;
+    }
+    /*其他样式*/
+    
+    * {
+        margin: 0;
+        padding: 0
+    }
+    
+    body {
+        background-color: #000;
+        text-align: center;
+    }
+    
+    .divStyle {
+    	margin-top: 5%;
+        width: 500px;
+        height: 500px;
+        background: #00a0e9;
+    }
+    
+    .innerDivStyle {
+        background-color: #fff;
+    }
+    .g0 {
+        color: #fff;
+    }
+    .a{
+    	width: 100px;
+    	height: 100px;
+    	background-color: red;
+    }
+    .b{
+    	display: none;
+    	width: 100px;
+    	height: 100px;
+    	background-color: green;
+    }
+    .a:hover ~.b{
+    	display: block;
+    	background-color: yellow
+    }
+    </style>
+</head>
+
+<body>
+    <pre class='g0'>func  :center the element;</pre>
+    <pre class='g0'>author:jyjin;             </pre>
+    <pre class='g0'>date  :2015.06.12;        </pre>
+    <pre class='g0'>remark:                   </pre>
+
+    <div class="center divStyle">
+        <div class="centered innerDivStyle">水平垂直居中内容</div>
+    </div>
+    <div class="a"></div>
+    <div class="b"></div>
+</body>
+
+</html>

@@ -1,0 +1,183 @@
+@charset "utf-8";
+
+body,ul,p{
+	padding: 0px 0px;
+	margin:0px 0px;
+}
+
+ul{
+	list-style-type: none;
+}
+
+.dn{
+	display: none;
+}
+
+.ell{
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+.bg_multi_region{
+	padding:1px ;
+	margin-bottom: -2px;
+	width: 116px;
+	height: 22px;
+	background: url(../images/bg_multi_select.png) no-repeat;
+	line-height: 22px;
+	font-size: 14px;
+	color:#a1a1a1;
+}
+
+.select_val {
+	/*display: block;
+	width: 94px;
+	height: 22px;
+	text-align: center;
+	line-height: 22px;
+	font-family:微软雅黑;
+	font-size: 11px;
+	color: #a1a1a1;*/
+	display: block;
+	padding: 0px 5px;
+	width: 80px;
+	height: 18px;
+	border: 0px;
+	text-align: center;
+	line-height: 19px;
+	font-family: 微软雅黑;
+	font-size: 11px;
+	color: #a1a1a1;
+	outline: none;
+}
+
+.multi_region_wrap {
+	position: absolute;
+	z-index: 10;
+	width: 114px;
+	background-color: #fff;
+	border: solid #e1e1e1;
+	border-width: 0px 1px 1px 1px;
+	color: #a1a1a1;
+	font-size: 12px;
+	font-family:微软雅黑;
+}
+
+.multi_region_options_wrap {
+	width: 100%;
+}
+
+.multi_region_pro_ul{
+	overflow: auto;
+	max-height: 150px;
+}
+
+.li_pro {
+	width: 100%;
+	min-height: 20px;
+	line-height: 20px;
+}
+
+.li_pro_hover,.li_city:hover{
+	background-color: #37ADF0;
+	color: #fff;
+	cursor: pointer;
+}
+
+.multi_pro_inp {
+	display: block;
+	float: left;
+	margin: 5px 5px 0px 5px;
+	margin: 3px 5px 0px 5px\9;
+}
+
+.multi_region_icon {
+	display: block;
+	float: left;
+	margin: 0px 5px 0px 0px;
+}
+
+.multi_region_city_ul {
+	width: 100%;
+}
+
+.li_city {
+	width: 100%;
+	height: 20px;
+	line-height: 20px;
+}
+
+.multi_city_inp {
+	display: block;
+	float: left;
+	margin: 5px 5px 0px 24px;
+	margin: 3px 5px 0px 24px\9;
+}
+
+.multi_region_btn_wrap {
+	width: 100%;
+	height: 29px;
+	border-top: 1px solid #e1e1e1;
+}
+
+.multi_region_btn {
+	display: block;
+	width: 34px;
+	height: 20px;
+	border: 1px solid #e1e1e1;
+	line-height: 20px;
+	text-align: center;
+	text-decoration: none;
+	color: #a1a1a1;
+}
+
+.multi_region_btn:hover{
+	text-decoration: none;
+	cursor: pointer;
+}
+
+.multi_region_sel_all {
+	float: left;
+	margin: 4px 10px;
+}
+
+.multi_region_btn_confirm {
+	float: right;
+	margin: 4px 10px;
+}
+
+.bg_multi_region:hover,
+.bg_multi_region label:hover,
+.multi_region_wrap:hover,
+.multi_region_pro_ul label:hover,
+.multi_region_pro_ul input:hover{
+	cursor: pointer;
+}
+
+.multi_fixed_item_wrapper{
+	width: 100%;
+	height: 24px;
+	text-align: center;
+}
+
+.multi_item_input{
+	margin: 5px 10px 0px;
+	width: 30px;
+	height: 10px;
+	border: 1px solid #e1e1e1;
+}
+
+.multi_start_num{
+	float: left;
+}
+
+.multi_end_num{
+	float: right;
+}
+
+.no-result p{
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+}

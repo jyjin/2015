@@ -1,0 +1,37 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>jquery ui</title>
+    <style>
+		body{margin:0;padding: 0;background:gray;}
+    </style>
+    <link rel="stylesheet" href="jquery-ui/jquery-ui.custom/jquery-ui.min.css">
+    <script type="text/javascript" src="../../common/jquery.min.js"></script>
+    <script type="text/javascript" src="jquery-ui/jquery-ui.custom/jquery-ui.min.js"></script>
+</head>
+
+<body>
+    <div id='dialog'>
+    	
+    </div>
+</body>
+<script type="text/javascript">
+$(function() {
+    // body...
+    $('#dialog').dialog({
+    	show:"slide",
+    	hide:"slide",
+    	width:500,
+    	height:300,
+    	modal:true,
+    	dialogClass:"my",
+    	create:function(){
+
+    	}
+    });
+})
+</script>
+
+</html>

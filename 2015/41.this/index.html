@@ -1,0 +1,126 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>javascript this指向研究</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+    function hello(thing) {
+        console.log(this + ' says hello ' + thing)
+    }
+    hello.call('jyjin', 'world');
+    //----------------------------------------------------------------------------------------------
+    //结论：this指向jyjin
+    //----------------------------------------------------------------------------------------------
+
+    hello('world');
+    //----------------------------------------------------------------------------------------------
+    //结论: 函数的直接调用<=>hello.call(window,'world'),this 指向window
+    //----------------------------------------------------------------------------------------------
+
+    var person = {
+        name: 'jyjin',
+        hello: function(thing) {
+            console.log(this + ' hello ' + thing)
+        }
+    }
+    person.hello('world');
+    //----------------------------------------------------------------------------------------------
+    //结论: this已经不指向window
+    //----------------------------------------------------------------------------------------------
+
+    function hello(thing) {
+        console.log(this + ' says hello ' + thing)
+    }
+    person = {
+        name: 'jyjin'
+    }
+    person.hello = hello;
+    person.hello('world');
+    //----------------------------------------------------------------------------------------------
+    //结论: this依旧指向person<=>person.hello.call(person,'world')
+    //猜测：this指向person
+    //----------------------------------------------------------------------------------------------
+
+    var person = {
+        name: 'jyjin',
+        hello: function(thing) {
+            console.log(this.name + ' hello ' + thing)
+        }
+    }
+    person.hello('world');
+    //----------------------------------------------------------------------------------------------
+    //结论: this已经指向person<=>person.hello.call(person,'world')
+    //----------------------------------------------------------------------------------------------
+
+    var rollHello = function(thing) {
+        return person.hello.call(person, thing)
+    }
+    rollHello('world')
+        //----------------------------------------------------------------------------------------------
+        //rollHello('world')<=>rollHello.call(window,'world')
+        //					 =>person.call(person,'world')
+        //结论: this依旧指向person<=>person.hello.call(person,'world')
+        //----------------------------------------------------------------------------------------------
+
+    var bindHello = function(func, scope) {
+        return function() {
+            return func.apply(scope, arguments);
+        }
+    }
+    rollHello = bindHello(person.hello, person)
+    rollHello('world');
+    //----------------------------------------------------------------------------------------------
+    //rollHello('world')<=>rollHello.call(window,'world')
+    //                  <=>bindeHello
+    //         			<=>function(){return func.apply(...)}
+    //                  <=>function(){}.call(window,arguments)
+    //					<=>func.apply(person,'world')
+    //                  <=>person.hello.apply(person,'world')
+    //即：rollHello('world') = person.hello.apply(person,'world')
+    //结论: this依旧指向person<=>person.hello.apply(person,'world')
+    //----------------------------------------------------------------------------------------------
+
+    function Person(thing) {
+        this.name = 'jyjin';
+        var hello1 = function(thing) {
+            console.log(this + ' says hello ' + thing)
+        }
+        hello1(thing);
+    }
+    person = new Person('world');
+
+    function Person1(thing) {
+        this.name = 'jyjin';
+        var hello1 = function(thing) {
+            console.log(this + ' says hello ' + thing)
+        }
+        hello1.call(window, thing);
+    }
+    person1 = new Person1('world');
+    //----------------------------------------------------------------------------------------------
+    //结论：this 指向的是window对象
+    //----------------------------------------------------------------------------------------------
+
+    function Person2(thing) {
+        var that = this;
+        this.name = 'jyjin';
+        var hello1 = function(thing) {
+            console.log(that + ' says hello ' + thing)
+        }
+        hello1(thing);
+    }
+    person2 = new Person2('world');
+    //----------------------------------------------------------------------------------------------
+    //结论：缓存后的this 指向的是Person对象
+    //----------------------------------------------------------------------------------------------
+
+    
+   
+    </script>
+</body>
+
+</html>

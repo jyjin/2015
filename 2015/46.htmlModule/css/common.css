@@ -1,0 +1,215 @@
+@charset 'utf-8';
+
+/**
+ *common layout:
+ *       header and footer style
+ */
+
+.header,
+.footer {
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+    color: #fff;
+}
+
+.header {
+    font-size: 16px;
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    background: #313131;
+    font-size: 14px;
+}
+
+.main {
+    color: #626262;
+    font-size: 14px;
+}
+
+.iconLogo,
+.iconGap,
+.btnWorkBench,
+.bgHeadImg,
+.username {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.navWrap,
+.wrapUserInfo {
+    height: 60px;
+    line-height: 56px;
+    vertical-align: middle;
+}
+
+.navWrap {
+    float: left;
+    margin-left: 30px;
+}
+
+.wrapUserInfo {
+    float: right;
+    margin-right: 30px;
+}
+
+.navWrap:after,
+.wrapUserInfo:after {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+}
+
+.iconLogo {
+    width: 50px;
+    height: 27px;
+    background: url(/image/logo.png?__sprite) no-repeat;
+}
+
+.iconGap {
+    margin: 0 15px;
+    width: 1px;
+    height: 15px;
+    background: url(/image/gap.png?__sprite) no-repeat;
+}
+
+.bgHeadImg {
+    margin-right: 10px;
+    width: 40px;
+    height: 40px;
+    border: 2px solid #fff;
+    border-radius: 22px;
+}
+
+.btnWorkBench {
+    width: 100px;
+    height: 30px;
+    border: 2px solid #fff;
+    border-radius: 5px;
+    line-height: 30px;
+    text-align: center;
+}
+
+div.btnWorkBench:hover {
+    border: 2px solid #ed365a;
+    color: #ed365a;
+    cursor: pointer;
+}
+
+.wrapUserInfo {
+    float: right;
+}
+
+.tilte {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    margin: 0 auto;
+    width: 100%;
+    background: #000;
+    text-align: center;
+}
+
+
+/**
+ *library:
+ *        dialog plugin style
+ */
+
+.dlgHolder {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    font-family: myfont1;
+}
+
+.dlgCover {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    opacity: 0.5;
+    z-index: 1;
+}
+
+.dlgTitle {
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+    background-color: #f7f7f7;
+    border-bottom: 1px solid #dcdcdc;
+    border-radius: 5px 5px 0px 0px;
+    color: #00a0e9;
+}
+
+.dlgBox {
+    position: fixed;
+    z-index: 2;
+    background-color: #fff;
+    box-shadow: 0px 0px 20px #666;
+    border-radius: 5px;
+}
+
+.dlgBtnsDouble,
+.dlgBtnsSingle {
+    position: absolute;
+    bottom: 20px;
+    left: 0px;
+    width: 100%;
+    text-align: center;
+    font-family: 'Microsoft YaHei';
+}
+
+.dlgContent {
+    margin-bottom: 50px;
+    padding: 5%;
+    width: 90%;
+    font-size: 16px;
+}
+
+.dlgBox input[type=button] {
+    display: inline-block;
+    width: 90px;
+    margin: 0 10px;
+    height: 30px;
+    background-color: #fff;
+    border: 1px solid #00a0e9;
+    border-radius: 5px;
+    line-height: 26px;
+    color: #00a0e9;
+    font-weight: 500;
+    font-size: 14px;
+    font-family: 'Microsoft YaHei';
+}
+
+.dlgBox input[type=button]:hover {
+    color: #fff;
+    background-color: #00a0e9;
+    cursor: pointer;
+}
+
+.divideBtn {
+    display: inline-block;
+}
+
+.dlgBtnClose {
+    position: absolute;
+    top: 22px;
+    right: 22px;
+    width: 17px;
+    height: 17px;
+    background: url(/image/close.png?__sprite) no-repeat;
+}
+
+.dlgBtnClose:hover {
+    cursor: pointer;
+}

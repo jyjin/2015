@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>Less演示</title>
+    <style type="text/less">
+        @fontFamily:微软雅黑;
+        @color:green;
+        .a{ font-family:@fontFamily; color:@color;}
+        .b{ font-family:@fontFamily; color: red;}
+        .c{ font-family:@fontFamily; color: yellow;}
+    </style>
+    <link rel="stylesheet/less" type="text/css" href="index.less" />
+    <script src="less-config.js" type="text/javascript"></script>
+    <script src="less-1.7.0.min.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="index.css"/>
+</head>
+<body>
+    <div class="a">你好</div>
+    <div class="b">你好啊</div>
+    <div class="c">你还好吧</div>
+</body>
+
+</html>

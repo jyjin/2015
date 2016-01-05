@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>菜单垂直展开折叠</title>
+    <style type="text/css">
+    .wrap-menu {
+        width: 778px;
+        margin: 0 auto;
+        overflow: auto;
+        width: 300px;
+        background: #F6F6F6;
+        font: 12px/1.5 Tahoma, Arial, sans-serif
+    }
+    
+    .wrap-menu ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+    
+    .wrap-menu ul li {
+        text-indent: 3em;
+        white-space: nowrap;
+    }
+    
+    .wrap-menu ul li h2 {
+        cursor: pointer;
+        height: 100%;
+        width: 100%;
+        margin: 0 0 1px 0;
+        font: 12px/31px '宋体';
+        color: #fff;
+        background: red;
+    }
+    
+    .wrap-menu ul li a {
+        display: block;
+        outline: none;
+        height: 25px;
+        line-height: 25px;
+        margin: 1px 0;
+        color: #1A385C;
+        text-decoration: none;
+    }
+    
+    .wrap-menu ul li img {
+        margin-right: 10px;
+        margin-left: -17px;
+        margin-top: 9px;
+        width: 7px;
+        height: 7px;
+        background: url(/jscss/demoimg/201402/arrow.gif) no-repeat;
+        border: none;
+    }
+    
+    .wrap-menu ul li img.unfold {
+        background-position: 0 -9px;
+    }
+    
+    .wrap-menu ul li a:hover {
+        background-color: #ccc;
+        background-image: none;
+    }
+    </style>
+    <script src="../../common/jquery.min.js"></script>
+    <script>
+    function AccordionMenu(options) {
+        this.config = {
+            containerCls: '.wrap-menu', // 外层容器
+            menuArrs: '', //  JSON传进来的数据
+            type: 'click', // 默认为click 也可以mouseover
+            renderCallBack: null, // 渲染html结构后回调
+            clickItemCallBack: null // 每点击某一项时候回调
+        };
+        this.cache = {};
+        this.init(options);
+    }
+    AccordionMenu.prototype = {
+        constructor: AccordionMenu,
+        init: function(options) {
+            this.config = $.extend(this.config, options || {});
+            var self = this,
+                _config = self.config,
+                _cache = self.cache;
+            // 渲染html结构
+            $(_config.containerCls).each(function(index, item) {
+                self._renderHTML(item);
+                // 处理点击事件
+                self._bindEnv(item);
+            });
+        },
+        _renderHTML: function(container) {
+            var self = this,
+                _config = self.config,
+                _cache = self.cache;
+            var ulhtml = $('<ul></ul>');
+            $(_config.menuArrs).each(function(index, item) {
+                var lihtml = $('<li><h2>' + item.title + '</h2></li>');
+                if (item.articles && item.articles.length > 0) {
+                    self._createSubMenu(item.articles, lihtml);
+                }
+                $(ulhtml).append(lihtml);
+            });
+            $(container).append(ulhtml);
+            _config.renderCallBack && $.isFunction(_config.renderCallBack) && _config.renderCallBack();
+            // 处理层级缩进
+            self._levelIndent(ulhtml);
+        },
+        /**
+         * 创建子菜单
+         * @param {array} 子菜单
+         * @param {lihtml} li项
+         */
+        _createSubMenu: function(submenu, lihtml) {
+            var self = this,
+                _config = self.config,
+                _cache = self.cache;
+            var subUl = $('<ul></ul>'),
+                callee = arguments.callee,
+                subLi;
+            $(submenu).each(function(index, item) {
+                var url = item.url || 'javascript:void(0)';
+                subLi = $('<li><a href="' + url + '">' + item.title + '</a></li>');
+                if (item.articles && item.articles.length > 0) {
+                    $(subLi).children('a').prepend('<img src="/jscss/demoimg/201402/blank.gif" alt=""/>');
+                    callee(item.articles, subLi);
+                }
+                $(subUl).append(subLi);
+            });
+            $(lihtml).append(subUl);
+        },
+        /**
+         * 处理层级缩进
+         */
+        _levelIndent: function(ulList) {
+            var self = this,
+                _config = self.config,
+                _cache = self.cache,
+                callee = arguments.callee;
+            var initTextIndent = 2,
+                lev = 1,
+                $oUl = $(ulList);
+            while ($oUl.find('ul').length > 0) {
+                initTextIndent = parseInt(initTextIndent, 10) + 2 + 'em';
+                $oUl.children().children('ul').addClass('lev-' + lev)
+                    .children('li').css('text-indent', initTextIndent);
+                $oUl = $oUl.children().children('ul');
+                lev++;
+            }
+            $(ulList).find('ul').hide();
+            $(ulList).find('ul:first').show();
+        },
+        /**
+         * 绑定事件
+         */
+        _bindEnv: function(container) {
+            var self = this,
+                _config = self.config;
+            $('h2,a', container).unbind(_config.type);
+            $('h2,a', container).bind(_config.type, function(e) {
+                if ($(this).siblings('ul').length > 0) {
+                    $(this).siblings('ul').slideToggle('fast').end().children('img').toggleClass('unfold');
+                }
+                $(this).parent('li').siblings().find('ul').hide()
+                    .end().find('img.unfold').removeClass('unfold');
+                _config.clickItemCallBack && $.isFunction(_config.clickItemCallBack) && _config.clickItemCallBack($(this));
+            });
+        }
+    };
+    </script>
+</head>
+
+<body>
+    <div class="wrap-menu">
+    </div>
+    <script>
+    var data = {
+        "errorCode": "0",
+        "result": {
+            "2": {
+                "title": "\u5206\u7c7bB",
+                "articles": [{
+                    "id": "1",
+                    "title": "\u4e60\u8fd1\u5e73\u5728\u4e4c\u6cd5\u4f1a\u89c1\u4fc4\u7f57\u65af\u603b\u7edf\u666e\u4eac"
+                }]
+            },
+            "1": {
+                "title": "\u5206\u7c7bA",
+                "articles": [{
+                    "articles": [{
+                        "id": "2",
+                        "title": "12\u7ea7\u53f0\u98ce\u201c\u83b2\u82b1\u201d\u4eca\u65e5\u4e2d\u5348\u5df2\u767b\u9646\u5e7f\u4e1c\u9646\u4e30"
+                    }, {
+                        "id": "3",
+                        "title": "\u4e2d\u56fd\u8fd17\u4e07\u5bb6\u884c\u4e1a\u534f\u4f1a\u5546\u4f1a\u5c06\u4e0e\u884c\u653f\u673a\u5173\u8131\u94a9"
+                    }],
+                    "title": "12\u7ea7\u53f0\u98ce\u201c\u83b2\u82b1\u201d\u4eca\u65e5\u4e2d\u5348\u5df2\u767b\u9646\u5e7f\u4e1c\u9646\u4e30"
+                }, {
+                    "id": "3",
+                    "title": "\u4e2d\u56fd\u8fd17\u4e07\u5bb6\u884c\u4e1a\u534f\u4f1a\u5546\u4f1a\u5c06\u4e0e\u884c\u653f\u673a\u5173\u8131\u94a9"
+                }]
+            }
+        }
+    }
+
+    var testData1 = [];
+    for (var o in data.result) testData1.push(data.result[o])
+    $(function() {
+        new AccordionMenu({
+            menuArrs: testData1
+        });
+    });
+    </script>
+    <div style="text-align:center;clear:both">
+    </div>
+</body>
+
+</html>

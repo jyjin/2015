@@ -1,0 +1,110 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>滚动翻动</title>
+    <link rel="stylesheet" type="text/css" href="../../common/base.css">
+    <link rel="stylesheet" type="text/css" href="../../common/reset.css">
+    <style>
+    body,
+    p {
+        margin: 0;
+        padding: 0;
+        color: #fff;
+    }
+    
+    div {
+        width: 100%;
+    }
+    
+    .div1 {
+        background: #ed365a;
+        height: 500px;
+    }
+    
+    .div2 {
+        background: green;
+        height: 500px;
+        overflow: auto;
+    }
+    
+    .div3 {
+        background: #4eeee8;
+        height: 700px;
+    }
+    
+    .div4 {
+        background: #ed5a36;
+        height: 300px;
+    }
+    
+    .div5 {
+        background: black;
+        height: 450px;
+    }
+    
+    .div6 {
+        background: yellow;
+        height: 650px;
+    }
+    
+    #inner3 {
+        width: 100%;
+        height: 50px;
+        /*background: #eee;*/
+    }
+    
+    .kdivide {}
+    </style>
+</head>
+
+<body>
+    <div id='div1' class="kdivide div1">
+        this is div1...
+        <div id="inner1">
+            that is inner div...
+        </div>
+    </div>
+    <div id='div2' class="kdivide div2">
+        <p>test scroll</p>
+        <p>test scroll</p>
+        <p>test scroll</p>
+        <p>test scroll</p>
+        <p>test scroll</p>
+        <p>test scroll</p>
+        <p>test scroll</p>
+        <p>test scroll</p>
+        <p>test scroll</p>
+        <p>test scroll</p>
+        <p>test scroll</p>
+        <p>test scroll</p>
+        <p>test scroll</p>
+        <p>test scroll</p>
+        <p>test scroll</p>
+        <p>test scroll</p>
+        <p>test scroll</p>
+        <p>test scroll</p>
+        <p>test scroll</p>
+        <p>test scroll</p>
+        <p>test scroll</p>
+        <p>test scroll</p>
+        <p>test scroll</p>
+        <p>test scroll</p>
+        <p>test scroll</p>
+        <p>test scroll</p>
+    </div>
+    <div id='div3' class="kdivide div3">this is div3
+        <div id="inner3">
+            that is inner div...
+        </div>
+    </div>
+    <div id='div4' class="kdivide div4">this is div4</div>
+    <div id='div5' class="kdivide div5">this is div5</div>
+    <div id='div6' class="kdivide div6">this is div6</div>
+    <script type="text/javascript" src="../../common/jquery.min.js"></script>
+    <script type="text/javascript" src='waypoints-master/lib/jquery.waypoints.min.js'></script>
+    <script type="text/javascript" src='scrollto.js'></script>
+</body>
+
+</html>

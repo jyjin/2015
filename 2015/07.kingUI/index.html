@@ -1,0 +1,78 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>UE组件展示</title>
+    <link rel="stylesheet" type="text/css" href="../../common/base.css" />
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <link rel="stylesheet" type="text/css" href="css/table.css" />
+    <link rel="stylesheet" href="plugin/kingMultiSelect/css/kingMultiSelect.css" />
+</head>
+
+<body>
+    <div class="head-bg"></div>
+    <div class="head">
+        <p class='title'>KingUI——自己的组件之家</p>
+        <p class='tr'>说明：本站搭建 前端开发组 源码开放</p>
+    </div>
+    <div class='container'>
+        <div class="container-inner">
+            <h2>kingMultiSelect</h2>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;kingMultiSelect——多选复选下拉列表,下拉列表树型小插件。目前最多支持两个层级，可完成多复选功能。联想输入搜索功能，内部功能回调机制，记忆勾选功能等。支持chrome,ieX+;</p>
+        </div>
+        <div class="container-inner">
+            <h3>使用说明</h3>
+            <p>1.引入kingMultiSelect包至项目目录pathX;</p>
+            <p>2.在页面引入jquery及相应css、js文件;</p>
+            <img src="images/multiSelect/link.png" alt="" />
+            <img src="images/multiSelect/src.png" alt="" />
+            <p>3.fn式插件调用;</p>
+            <img src="images/multiSelect/html.png" alt="" />
+            <img src="images/multiSelect/using.png" alt="" />
+        </div>
+        <div class="container-inner">
+            <h3>参数详解</h3>
+            <h4 id='property'>属性</h4>
+            <h4 id='function'>方法</h4>
+            <h4 >内部方法回调</h4>
+            <p id='innerFunc'>调用方法：$(wrapId).kingMultiSelect(methodName,param1,param2,...)</p>
+        </div>
+        <div class="container-inner">
+            <h3>功能演示</h3>
+            <div class='demo-wrap'>
+                <span>演示一：</span>
+                <div id='demo1'></div>
+                <div class="cb"></div>
+            </div>
+            <div class='demo-wrap'>
+                <span>演示二：</span>
+                <div id='demo2'></div>
+                <div class="cb"></div>
+            </div>
+            <div class='demo-wrap'>
+                <span>演示三：</span>
+                <div id='demo3'></div>
+                <div class="cb"></div>
+            </div>
+            <div class='demo-wrap'>
+                <span>演示四：</span>
+                <div id='demo4'></div>
+                <div class="cb"></div>
+            </div>
+            <a href="js/index.js" target='_blank'>演示代码</a>
+        </div>
+    </div>
+    <script id='api_tmpl' type="text/x-jquery-template">
+        <div class="dash">
+            <p class='title' title='{{= name}}'>{{= name}}</p>
+            <p>类型：{{= type}}；{{= def}}；功能：{{= func}}；特色功能：{{if spec}}{{= spec}}{{else}}无{{/if}}；</p>
+        </div>
+    </script>
+    <script type="text/javascript" src='js/jquery-1.10.2.min.js'></script>
+    <script type='text/javascript' src='plugin/jqTmpl/jquery.tmpl.js'></script>
+    <script type="text/javascript" src='plugin/kingMultiSelect/js/kingMultiSelect.min.js'></script>
+    <script type="text/javascript" src='js/data.js'></script>
+    <script type="text/javascript" src='js/index.js' charset='UTF-8'></script>
+</body>
+</html>

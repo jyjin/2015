@@ -1,0 +1,122 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>拖拽图片</title>
+    <style type="text/css">
+    @font-face {
+        font-family: 'myfont1';
+        src: url('fzltxh_GBK.ttf');
+        font-weight: lighter;
+        font-style: normal;
+    }
+    
+    body {
+        padding: 0 0;
+        margin: 0 0;
+        background: #00a0e9;
+        color: #fff;
+        font-family: myfont1;
+    }
+    
+    #side {
+        width: 440px;
+        position: absolute;
+        right: 0px;
+        top: 0px;
+        text-align: center;
+    }
+    
+    #side img {
+        display: inline-block;
+        margin: 10px 0px;
+    }
+    
+    #main {
+        margin-right: 440px;
+        border-right: 2px solid #fff;
+    }
+    
+    #main:after {
+        content: '';
+        display: table;
+        clear: both;
+    }
+    
+    .wrap {
+        float: left;
+        margin: 10px 20px;
+        border: 1px dashed #fff;
+        width: 410px;
+        height: 300px;
+        vertical-align: middle;
+        text-align: center;
+        font-size: 30px;
+    }
+    
+    .wrap:before {
+        content: '';
+        height: 100%;
+        display: inline-block;
+        vertical-align: middle;
+    }
+    
+    .wrap img {
+        display: inline-block;
+        vertical-align: middle;
+    }
+    </style>
+    <script type="text/javascript" src="../../common/jquery.min.js"></script>
+</head>
+
+<body>
+    <div id="main">
+        <div class="wrap">1</div>
+        <div class="wrap">2</div>
+        <div class="wrap">3</div>
+        <div class="wrap">4</div>
+        <div class="wrap">5</div>
+        <div class="wrap">6</div>
+        <div class="wrap">7</div>
+        <div class="wrap">8</div>
+        <div class="wrap">9</div>
+        <div class="wrap">10</div>
+        <div class="wrap">11</div>
+        <div class="wrap">12</div>
+    </div>
+    <div id="side">
+        <img src="1.jpg" id="img" width="400px" draggable='true'>
+    </div>
+    <script type="text/javascript">
+    function dragstart(e) {
+        document.getElementById(e.target.id).style.cursor = 'move';
+        e.dataTransfer.setData('SourceId', e.target.id);
+        console.log(123)
+    }
+
+
+    function allowdrag(e) {
+        e.preventDefault();
+    }
+
+    function drop(e) {
+        var id = e.dataTransfer.getData('SourceId');
+        e.target.innerHTML = document.getElementById(id).outerHTML;
+    }
+
+    document.getElementById('img').addEventListener('dragstart', dragstart, false);
+    // document.getElementById('div1').addEventListener('dragover',allowdrag,false);
+    // document.getElementById('div1').addEventListener('drop',drop,false);
+
+
+    var divs = document.getElementsByTagName('div');
+
+    for (var i = 0, l = divs.length; i < l; i++) {
+        divs[i].addEventListener('dragover', allowdrag, false);
+        divs[i].addEventListener('drop', drop, false);
+    }
+    </script>
+</body>
+
+</html>

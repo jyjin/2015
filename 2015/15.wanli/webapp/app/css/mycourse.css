@@ -1,0 +1,342 @@
+@charset 'utf-8';
+/*通用样式*/
+
+body {
+    font-family: 微软雅黑;
+}
+
+.pointer:hover {
+    cursor: pointer;
+}
+
+.pr {
+    position: relative;
+}
+
+.block {
+    display: block;
+}
+
+.tc {
+    text-align: center;
+}
+
+.dn {
+    display: none;
+}
+
+.cb {
+    clear: both;
+}
+
+.ell {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+/*导航渐变分割底线*/
+
+.header-line {
+    position: fixed;
+    top: 70px;
+    width: 100%;
+    height: auto;
+}
+
+.c5 {
+    border-bottom: 1px solid #c5c5c5;
+}
+
+.d5 {
+    border-bottom: 1px solid #d5d5d5
+}
+
+.f1 {
+    border-bottom: 1px solid #f1f1f1;
+}
+
+.ba {
+    margin-left: -2px;
+    width: 200px;
+    border-bottom: 1px solid #bababa;
+}
+
+.ce {
+    margin-left: -1px;
+    width: 198px;
+    border-bottom: 1px solid #cecece
+}
+
+.f0 {
+    border-bottom: 1px solid #f0f0f0;
+}
+/*内容区 双飞翼布局*/
+
+.main-wrap {
+    margin: 98px auto 0px;
+    width: 1000px;
+}
+
+.main-left {
+    position: relative;
+    margin-left: -100%;
+    width: 160px;
+}
+
+.main-center {
+    position: relative;
+    width: 100%;
+}
+
+.main-center-inner {
+    margin-left: 160px;
+    margin-right: 210px;
+}
+
+.main-right {
+    position: relative;
+    margin-left: -210px;
+    width: 210px;
+}
+/*左侧菜单*/
+
+.left-menu li {
+    margin-bottom: 1px;
+    width: 100%;
+    height: 80px;
+    background-color: #4d4d4d;
+    font-family: 微软雅黑;
+    font-size: 20px;
+    color: #d5d5d5;
+}
+
+.left-menu li.left-item-title {
+    height: 90px;
+}
+
+.left-menu li:hover {
+    background-color: #fff;
+    color: #4d4d4d;
+    cursor: pointer;
+}
+
+.left-item span {
+    display: block;
+}
+/*首个li项特殊处理*/
+
+.left-item-title .icon-margin， .main-top .icon-margin {
+    margin: 35px 5px 0px 10px;
+}
+
+.left-item-title .txt-margin,
+.main-top .txt-margin {
+    margin: 38px 5px 0px 0px;
+}
+/*大图标公共缩放样式*/
+
+.icon-margin {
+    width: 35px;
+    height: 35px;
+    margin: 30px 5px 0px 10px;
+}
+/*图标标题公共样式*/
+
+.txt-margin {
+    margin: 40px 0px 0px 0px;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: left;
+}
+
+.left-item-txt {
+    width: 100px;
+    height: 20px;
+}
+/*中间内容区*/
+
+.main-top {
+    padding: 1px;
+    width: 100%;
+    height: 88px;
+    background-color: #f5f5f5;
+}
+
+.main-top-icon {
+    margin-left: 10%;
+    background: url(../image/preferences.png) no-repeat;
+    background-size: 35px 35px;
+}
+
+.main-top-txt {
+    color: #4d4d4d;
+}
+
+.main-container {
+    padding: 10px 0px 5px;
+    color: #696969;
+    font-size: 12px;
+}
+
+.container-item {
+    float: left;
+    position: relative;
+    margin: 5px;
+    padding: 2px;
+    width: 196px;
+    height: 144px;
+    background-color: #f2f2f2;
+}
+
+.container-item .dn {
+    display: none;
+}
+
+.img-delete {
+    display: block;
+    position: absolute;
+    top: 0px;
+    right: 1px;
+    width: 20px;
+    height: 20px;
+    background: url(../image/btn-remove.png) no-repeat;
+    background-size: 20px 20px;
+}
+
+.img-item {
+    width: 196px;
+    height: 120px;
+}
+
+.img-txt {
+    width: 100%;
+    text-align: left;
+    color: #696969;
+    height: 20px;
+}
+/*右侧内容区*/
+/*用户信息*/
+
+.right-top {
+    width: 100%;
+    height: 35px;
+    padding: 80px 0px 5px;
+    background: url(../image/dabai.jpg) no-repeat;
+    background-size: 210px 120px;
+    color: #535353;
+}
+
+.user-name {
+    width: 85%;
+    font-size: 16px;
+    font-weight: 500;
+    color: #737373;
+}
+
+.user-info {
+    width: 100%;
+    padding: 0px 5px;
+    font-size: 12px;
+}
+
+.user-info .user-school {
+    width: 60%;
+}
+
+.user-grade {
+    margin-left: 5px;
+    width: 34%;
+}
+/*档案*/
+
+.school-file {
+    position: relative;
+    padding: 1px 0px;
+    width: 100%;
+    background-color: #f2f2f2;
+    font-size: 12px;
+}
+
+.icon-file {
+    margin: 20px 0px 5px 10px;
+    width: 35px;
+    height: 35px;
+    background: url(../image/icon-file.png) no-repeat;
+    background-size: 35px 35px;
+}
+
+.file-txt {
+    margin: 22px 0px 0px;
+    padding: 5px 0px;
+    width: 60%;
+    height: 20px;
+    line-height: 20px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #454545;
+}
+
+.file-item {
+    padding: 0px 5px;
+    margin: 4px 5px;
+    width: 90%;
+    height: 40px;
+    background-color: #fff;
+    line-height: 40px;
+    text-align: left;
+}
+
+.file-share {
+    padding: 1px 0px;
+    background-color: #f2f2f2;
+    color: #3d3d3d;
+}
+
+.icon-share {
+    margin: 10px 0px 5px 0px;
+    width: 90%;
+    padding-left: 8%;
+}
+
+.share-item {
+    margin-left: 5px;
+    width: 30px;
+    height: 20px;
+}
+
+.share-item1 {
+    width: 40px;
+    height: 20px;
+}
+/*日程*/
+
+.calendar {
+    margin-top: 10px;
+    width: 100%;
+    height: 245px;
+    background-color: #f2f2f2;
+}
+
+.icon-calendar {
+    margin: 10px 0px 5px 10px;
+    width: 35px;
+    height: 35px;
+    background: url(../image/book.png) no-repeat;
+    background-size: 35px 35px;
+}
+
+.calendar-txt {
+    margin: 4px 0px 0px 0px;
+    padding: 5px 10px;
+    width: 60%;
+    height: 20px;
+    line-height: 20px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #454545;
+    text-align: left;
+}
+
+.WdateDiv {
+    border-style: none;
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>首页</title>
+    <style>
+    .content {
+        width: 1000px;
+        height: 500px;
+        background: green;
+        margin: 100px auto;
+        color: #fff;
+    }
+
+    h1{
+    	width: 100%;
+    	text-align: center;
+    }
+    
+    .wc {
+        text-align: center;
+    }
+    
+    .wc:before {
+        content: '';
+        display: inline-block;
+        height: 100%;
+        vertical-align: middle;
+        background: red;
+    }
+    
+    .ic {
+        display: inline-block;
+        vertical-align: middle;
+    }
+    
+    .inner {
+        width: 300px;
+        height: 300px;
+        background: black;
+    }
+    </style>
+</head>
+
+<body>
+	<h1>css完美水平垂直居中</h1>
+    <div class="content wc">
+        <div class="inner ic">
+            inner div
+        </div>
+    </div>
+    <script data-main="../script/config" type="text/javascript" src="../script/lib/requirejs/require.js"></script>
+    <script type="text/javascript">
+    require(['../script/service/index.js'], function(index) {
+        new index().main();
+    });
+    </script>
+</body>
+
+</html>

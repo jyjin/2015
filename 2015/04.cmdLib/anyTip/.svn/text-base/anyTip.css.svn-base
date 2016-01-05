@@ -1,0 +1,46 @@
+.anytip-wrap{
+}
+.anytip-border{
+	font-size: 0;
+	line-height: 0;
+}
+
+.l-1{
+	margin:0px 1px;
+	height: 2px;
+	border-left: 1px solid;
+	border-right: 1px solid;
+}
+
+.l-2{
+	margin:0px 2px;
+	height: 1px;
+	border-left: 1px solid;
+	border-right: 1px solid;
+}
+
+.l-3{
+	margin:0px 3px;
+	height: 1px;
+	border-left: 1px solid;
+	border-right: 1px solid;
+}
+
+.l-4{
+	margin:0px 4px;
+	height: 1px;
+	border-left: 2px solid;
+	border-right: 2px solid;
+}
+
+.l-5{
+	margin:0px 6px;
+	height: 0px;
+	border-top:1px solid;
+}
+
+.anytip-content-wrap{
+	padding: 5px;
+	border-style:solid;
+	border-width: 0px 1px;
+}

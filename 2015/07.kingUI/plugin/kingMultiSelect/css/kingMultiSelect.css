@@ -1,0 +1,192 @@
+@charset "utf-8";
+body,
+ul,
+p {
+    padding: 0px 0px;
+    margin: 0px 0px;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.dn {
+    display: none;
+}
+
+.ell {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}.a1 {
+    color: #a1a1a1;
+}
+
+.bw-1111 {
+    border-width: 1px;
+}
+
+.bw-0001 {
+    border-width: 0px 0px 0px 1px;
+}
+
+.bw-1000 {
+    border-width: 1px 0px 0px 0px;
+}
+
+.bw-0111 {
+    border-width: 0px 1px 1px 1px;
+}
+
+.bw-1011 {
+    border-width: 1px 0px 1px 1px;
+}
+
+.bw-1101 {
+    border-width: 1px 1px 0px 1px;
+}
+
+.bw-1110 {
+    border-width: 1px 1px 1px 0px;
+}
+
+.border-solid {
+    border-style: solid;
+}
+
+.border-color {
+    border-color: #e1e1e1;
+}
+
+.multi-text-wrap {
+    position: relative;
+    font-size: 14px;
+    color: #a1a1a1;
+}
+
+.select-val {
+    display: block;
+    padding: 0px 5px;
+    float: left;
+    border: 0px;
+    text-align: center;
+    font-family: 微软雅黑;
+    font-size: 11px;
+    color: #a1a1a1;
+    outline: none;
+}
+
+.icon-select {
+    display: block;
+    position: absolute;
+    right: -1px;
+    width: 23px;
+    height: 22px;
+}
+
+.multi-region-wrap {
+    position: absolute;
+    z-index: 10;
+    background-color: #fff;
+    color: #a1a1a1;
+    font-size: 12px;
+    font-family: 微软雅黑;
+}
+
+.multi-region-options-wrap {
+    width: 100%;
+}
+
+.multi-region-pro-ul {
+    overflow: auto;
+}
+
+.li-pro {
+    overflow: hidden;
+    width: 100%;
+}
+
+.li-pro-hover,
+.li-city:hover {
+    background-color: #37ADF0;
+    color: #fff;
+    cursor: pointer;
+}
+
+.multi-pro-inp {
+    display: block;
+    float: left;
+    margin: 5px 5px 0px 5px;
+    margin: 3px 5px 0px 5px\9;
+}
+
+.multi-region-icon {
+    display: block;
+    float: left;
+    margin: 0px 5px 0px 0px;
+}
+
+.multi-region-city-ul {
+    width: 100%;
+}
+
+.li-city {
+    overflow: hidden;
+    width: 100%;
+    line-height: 20px;
+}
+
+.multi-city-inp {
+    display: block;
+    float: left;
+    margin: 5px 5px 0px 24px;
+    margin: 3px 5px 0px 24px\9;
+}
+
+.multi-region-btn-wrap {
+    width: 100%;
+    height: 29px;
+}
+
+.multi-region-btn-wrap .dn {
+    display: none;
+}
+
+.multi-region-btn {
+    display: block;
+    width: 34px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    text-decoration: none;
+    color: #a1a1a1;
+}
+
+.multi-region-btn-confirm {
+    float: left;
+    margin: 4px 10px;
+}
+
+.multi-region-btn:hover {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.multi-region-sel-all {
+    float: right;
+    margin: 4px 10px;
+}
+
+.no-result p {
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+}
+
+.multi-text-wrap:hover,
+.multi-text-wrap label:hover,
+.multi-region-wrap:hover,
+.multi-region-pro-ul label:hover,
+.multi-region-pro-ul input:hover {
+    cursor: pointer;
+}

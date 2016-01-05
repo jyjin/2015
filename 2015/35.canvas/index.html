@@ -1,0 +1,117 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>canvas 画图学习</title>
+    <style>
+    * {
+        padding: 0 0;
+        margin: 0 0;
+    }
+    
+    body {
+        background: #000;
+    }
+    </style>
+</head>
+
+<body>
+    <canvas id='mycanvas'></canvas>
+    <script type="text/javascript">
+    var c = document.getElementById('mycanvas');
+    c.style.border = '1px solid #FFF'
+        //设置画布容器大小
+    c.width = document.documentElement.offsetWidth - 2;
+    c.height = 400;
+
+    // var color = ['#fff', '#701392', 'blue','pink', '#134D92', 'green','orange','purple'];
+    var color = ['#ed5a36', '#00a0e9'];
+
+    //设置画布
+    var cxt = c.getContext('2d');
+
+    function clear() {
+        cxt.clearRect(0, 0, document.documentElement.offsetWidth - 2, 400);
+    }
+
+    //画圆
+    function setRandomCircle(originX, wise, color) {
+        cxt.fillStyle = color;
+        cxt.beginPath();
+        //移动到圆心
+        cxt.moveTo(originX, 250);
+        //圆心横坐标，圆心纵坐标，半径，起始弧度，结束弧度
+        cxt.arc(originX, 250, 50, (Math.PI / 180) * (0), (Math.PI / 180) * wise, false);
+        cxt.closePath();
+        cxt.fill();
+    }
+
+    var x, t, c = 0,
+        o = 51,f=0;
+
+    // function cc() {
+    //     x = 0;
+    //     t = setInterval(function() {
+    //         if (x > 360) {
+    //             clearInterval(t);
+    //             c++;
+    //             if (c > color.length) {
+    //                 c = 0;
+    //             }
+    //             cc();
+    //         }
+    //         // setRandomCircle(o++, x++, x++, color[c])
+    //         setRandomCircle(o++, 360, color[1])
+    //     }, 1);
+    // }
+
+    function init() {
+        cxt.fillStyle = '#ed5a36';
+
+        cxt.fillRect(0, 300, document.documentElement.offsetWidth - 2, 400);
+
+        //画折线
+        cxt.moveTo(500, 300);
+        cxt.lineTo(800, 200);
+        cxt.lineTo(800, 300);
+        cxt.strokeStyle = '#fff';
+        cxt.stroke();
+
+        //画直线
+        cxt.moveTo(1000, 150);
+        cxt.lineTo(1300, 150);
+        cxt.strokeStyle = '#fff';
+        cxt.stroke();
+
+        //清除画布
+        cxt.clearRect(500, 300, 300, 100);
+        cxt.clearRect(1000, 300, 300, 100);
+
+        //添加文字
+
+        cxt.font = 'italic 20px 微软雅黑';
+        cxt.strokeText('我想绘制一个小球', 900, 50);
+
+        // cc();
+        if(o>490){
+            f=1;
+        }
+        if(o<50){
+            f=0;
+        }
+        f==0?setRandomCircle(o+=0.5, 360, color[1]):setRandomCircle(o-=0.5, 360, color[1]);
+    }
+    // init();
+    animate()
+
+    function animate() {
+        setInterval(function() {
+            clear();
+            init();
+        }, 1)
+    }    
+    </script>
+</body>
+
+</html>

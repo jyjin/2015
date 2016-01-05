@@ -1,0 +1,47 @@
+body {
+    background: #000;
+    font-family: 微软雅黑;
+}
+
+div {
+    color: #fff;
+    text-align: center;
+    width: 300px;
+    height: 600px;
+    font-size: 40px;
+}
+
+.w {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin: -300px -150px;
+}
+
+.w div {
+    position: absolute;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    transition: all 0.6s ease-in-out;
+    border-radius: 10px;
+}
+
+.a {
+    background: #ed5a36;
+    transform: rotateY(0deg);
+}
+
+.b {
+    background: #00a0e9;
+    transform: rotateY(180deg);
+}
+
+.w:hover .a {
+    background: #ed5a36;
+    transform: rotateY(-180deg);
+}
+
+.w:hover .b {
+    background: #00a0e9;
+    transform: rotateY(0deg);
+}

@@ -1,0 +1,125 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>css3 测试</title>
+    <style>
+    body {
+        margin: 0;
+        padding: 0;
+        background: #000;
+        font-family: 微软雅黑;
+    }
+    /*@keyframes move{
+			0%{
+				left:0px;
+				top: 0px;
+			}
+
+			25%{
+				left:1000px;
+				top: 0px;
+			}
+		}
+
+		.a{
+			position: relative;
+			width: 100px;
+			height: 100px;
+			background: yellow;
+			animation:move 2s  infinite;
+		}*/
+    
+    .wrap {
+        width: 980px;
+        margin: 0px auto;
+        background: green;
+        height: 1000px;
+    }
+    
+    .btn {
+        margin: 100px auto;
+        width: 100px;
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+        color: #fff;
+        border: 2px solid #2098d1;
+        border-radius: 5px;
+    }
+    
+    .btn span {
+        display: inline-block;
+        margin-right: 10px;
+        background: url(home.png) no-repeat center center;
+        width: 16px;
+        height: 16px;
+    }
+    
+    .scale-vtl,
+    .scale-hzt {
+        display: inline-block;
+        position: relative;
+        vertical-align: middle;
+        transform: translateZ(0);
+        transition-duration: 0.3s;
+        backface-visibility: hidden;
+    }
+    
+    .scale-hzt:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background: #2098d1;
+        transform: scaleX(0);
+        transform-origin:50%;
+        transition-property: transform;
+        transition-duration: 0.3s;
+        transition-timing-function: ease-out;
+        z-index: -1;
+    }
+    
+    .scale-hzt:hover {
+        cursor: pointer;
+    }
+    
+    .scale-hzt:hover:before {
+        transform: scaleX(1);
+    }
+    
+    .scale-vtl:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background: #2098d1;
+        transform: scaleY(0);
+        transform-origin: 50%;
+        transition-property: transform;
+        transition-duration: 0.3s;
+        transition-timing-function: ease-out;
+        z-index: -1;
+    }
+
+    .scale-vtl:hover:before {
+        transform: scaleY(1);
+    }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class='btn scale-hzt'><span></span>首页</div>
+        <div class='btn scale-vtl'><span></span>首页</div>
+    </div>
+</body>
+
+</html>
+<!-- <div class="a"></div>
+	<a href="http://console.sightp.com">baidu</a> -->

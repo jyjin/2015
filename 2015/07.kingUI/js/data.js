@@ -1,0 +1,278 @@
+var usePropertyGuide = [{
+	name: 'data',
+	type: 'json',
+	belong: 'property',
+	def: '有默认数据',
+	func: '列表数据源',
+	spec: 'kingMultiSelect自动绑定所有属性至dom树'
+}, {
+	name: 'selectId',
+	type: 'Array',
+	belong: 'property',
+	def: '默认为空',
+	func: '默认选中项标记值id集合',
+	spec: ''
+}, {
+	name: 'selectText',
+	type: 'Array',
+	belong: 'property',
+	def: '默认为空',
+	func: '默认选中项显示值text集合',
+	spec: ''
+}, {
+	name: 'initAllSelect',
+	type: 'boolean',
+	belong: 'property',
+	def: '默认false',
+	func: '初始加载是否启用全选',
+	spec: ''
+}, {
+	name: 'allSelectText',
+	type: 'String',
+	belong: 'property',
+	def: '默认\"全部\"',
+	func: '当启用showAllSelectText=true时，全选时替代字段',
+	spec: ''
+}, {
+	name: 'disSelectText',
+	type: 'String',
+	belong: 'property',
+	def: '默认\"请选择\"',
+	func: '全不选时替代字段，避免选项为空',
+	spec: ''
+}, {
+	name: 'showAllSelectText',
+	type: 'boolean',
+	belong: 'property',
+	def: '默认false',
+	func: '全选时是否用字段代替开关，启用则显示allSelectText值',
+	spec: ''
+}, {
+	name: 'associatting',
+	type: 'boolean',
+	belong: 'property',
+	def: '默认false',
+	func: '联想输入开关，启用可联想列表项',
+	spec: ''
+}, {
+	name: 'icon',
+	type: 'String',
+	belong: 'property',
+	def: '默认\".\/plugin\/kingMultiSelect\/images\/icon.png\",当前位于plugin目录下',
+	func: '列表图标路径',
+	spec: ''
+}, {
+	name: 'iconPX',
+	type: 'String',
+	belong: 'property',
+	def: '默认\"7px\"',
+	func: '列表图标横向位移值',
+	spec: ''
+}, {
+	name: 'iconPY',
+	type: 'String',
+	belong: 'property',
+	def: '默认\"7px\"',
+	func: '列表图标纵向位移值',
+	spec: ''
+}, {
+	name: 'iconWidth',
+	type: 'String',
+	belong: 'property',
+	def: '默认\"23px\"',
+	func: '图标宽度',
+	spec: ''
+}, {
+	name: 'iconHeight',
+	type: 'String',
+	belong: 'property',
+	def: '默认\"20px\"',
+	func: '图标高度',
+	spec: ''
+}, {
+	name: 'width',
+	type: 'String',
+	belong: 'property',
+	def: '默认\"114px\"',
+	func: '列表宽度(不含左右边线2px)',
+	spec: ''
+}, {
+	name: 'height',
+	type: 'String',
+	belong: 'property',
+	def: '默认\"20px\"',
+	func: '列表显示值区域高度(不含上下边线2px)',
+	spec: ''
+}, {
+	name: 'optHeight',
+	type: 'String',
+	belong: 'property',
+	def: '默认150px',
+	func: '列表展开区高度',
+	spec: ''
+}, {
+	name: 'itemHeight',
+	type: 'String',
+	belong: 'property',
+	def: '默认20px',
+	func: '列表单项行高度',
+	spec: ''
+}, {
+	name: 'color',
+	type: 'String',
+	belong: 'property',
+	def: '默认\"#a1a1a1\"',
+	func: '字体颜色',
+	spec: ''
+}, {
+	name: 'font',
+	type: 'String',
+	belong: 'property',
+	def: '默认\"微软雅黑 Arial\"',
+	func: '列表区字体',
+	spec: ''
+}, {
+	name: 'fontSize',
+	type: 'String',
+	belong: 'property',
+	def: '默认\"12px\"',
+	func: '列表区文本大小',
+	spec: ''
+}, {
+	name: 'borderColor',
+	type: 'String',
+	belong: 'property',
+	def: '默认\"#e1e1e1\"',
+	func: '列表边线颜色',
+	spec: ''
+}, {
+	name: 'hoverColor',
+	type: 'String',
+	belong: 'property',
+	def: '默认\"#37ADF0\"',
+	func: '列表项单行hover背景色值',
+	spec: ''
+}, {
+	name: 'memory',
+	type: 'String',
+	belong: 'property',
+	def: '默认true',
+	func: 'true,记住上次选中操作，确定生效;false,单项点击生效，无确定按钮',
+	spec: ''
+}];
+
+var useFuncGuide = [{
+	name: 'allselectBefore',
+	type: 'function',
+	belong: 'function',
+	def: '默认为空',
+	func: '全选前事件',
+	spec: ''
+}, {
+	name: 'loadAfter',
+	type: 'function',
+	belong: 'function',
+	def: '默认为空',
+	func: '加载完成事件',
+	spec: ''
+}, {
+	name: 'itemClick(thisObj)',
+	type: 'function',
+	belong: 'function',
+	def: '默认为空',
+	func: '单项点击事件',
+	spec: 'thisObj返回当前触发对象'
+}, {
+	name: 'whenConfirm',
+	type: 'function',
+	belong: 'function',
+	def: '默认为空',
+	func: '确定回调事件',
+	spec: ''
+}];
+
+
+var innerFuncGuide = [{
+	name: 'checkAllNoSelected(type,obj)',
+	type: 'function',
+	belong: 'function',
+	def: '\"ALL\"',
+	func: '检查是否全不选',
+	spec: 'type：ALL(所有层级)|PRO(第一层级)|CITY(爹层级)；obj:参数为city指定为当前city的父级对象；'
+}, {
+	name: 'checkAllSelected(type,obj)',
+	type: 'function',
+	belong: 'function',
+	def: '无',
+	func: '检查是否全选',
+	spec: 'type:ALL(所有层级)|PRO(第一层级)|CITY(爹层级)；obj:参数为city指定为当前city的父级对象；'
+}, {
+	name: 'getOptionsType(type,obj)',
+	type: 'function',
+	belong: 'function',
+	def: '无',
+	func: '获取指定类型的checkBox对象集合',
+	spec: 'type:ALL(所有层级)|PRO(第一层级)|CITY(爹层级)；obj:参数为city指定为当前city的父级对象；return checkBox jq对象；'
+}, {
+	name: 'getSelectItemID()',
+	type: 'function',
+	belong: 'function',
+	def: '无',
+	func: '获取选中项id集合',
+	spec: 'return arr'
+}, {
+	name: 'getSelectItemText()',
+	type: 'function',
+	belong: '获取选中项text集合',
+	def: '无',
+	func: 'return arr',
+	spec: ''
+}, {
+	name: 'getSelectItemAttr(attrName)',
+	type: 'function',
+	belong: 'function',
+	def: '无',
+	func: '获取选中项attr集合',
+	spec: 'ret arr'
+}, {
+	name: 'setAllSelecting(type,isAllSelect,obj)',
+	type: 'function',
+	belong: 'function',
+	def: '无',
+	func: '设定全选或全不选(不触发输入框值绑定)',
+	spec: 'type:ALL(所有层级)|PRO(第一层级)|CITY(爹层级)；isAllSelect:true/false;obj:参数为city指定为当前city的父级对象；'
+}, {
+	name: 'selfOpen()',
+	type: 'function',
+	belong: 'function',
+	def: '无',
+	func: '自身打开',
+	spec: ''
+}, {
+	name: 'setMultiValue()',
+	type: 'function',
+	belong: 'function',
+	def: '无',
+	func: '自身关闭',
+	spec: ''
+}, {
+	name: 'setRegionCityClose()',
+	type: 'function',
+	belong: 'function',
+	def: '无',
+	func: '设定二级关闭',
+	spec: ''
+}, {
+	name: 'setSpeciSelect(arr)',
+	type: 'function',
+	belong: 'function',
+	def: '无',
+	func: '根据id数组设置指定勾选',
+	spec: 'arr参数：id数组集合'
+}];
+
+$(function() {
+	$('#api_tmpl').tmpl(usePropertyGuide).insertAfter('#property');
+	$('#api_tmpl').tmpl(useFuncGuide).insertAfter('#function');
+	$('#api_tmpl').tmpl(innerFuncGuide).insertAfter('#innerFunc');
+});

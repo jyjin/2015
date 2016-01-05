@@ -1,0 +1,66 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>翻转切换</title>
+    <link rel="stylesheet" href="baiduapi.css">
+    <style type="text/css">
+    body {
+        background: #000;
+        font-family: 微软雅黑;
+    }
+    
+    div {
+        color: #fff;
+        text-align: center;
+        width: 300px;
+        height: 600px;
+        font-size: 40px;
+    }
+    
+    .w {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        margin: -300px -150px;
+    }
+    
+    .w div {
+        position: absolute;
+        transform-style: preserve-3d;
+        backface-visibility: hidden;
+        transition: all 0.6s ease-in-out;
+        border-radius: 10px;
+    }
+    
+    .a {
+        background: #ed5a36;
+        transform: rotateY(0deg);
+    }
+    
+    .b {
+        background: #00a0e9;
+        transform: rotateY(180deg);
+    }
+    
+    .w:hover .a {
+        background: #ed5a36;
+        transform: rotateY(-180deg);
+    }
+    
+    .w:hover .b {
+        background: #00a0e9;
+        transform: rotateY(0deg);
+    }
+    </style>
+</head>
+
+<body>
+    <div class="w">
+        <div class="a">正面</div>
+        <div class="b">反面</div>
+    </div>
+</body>
+
+</html>

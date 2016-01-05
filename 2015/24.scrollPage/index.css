@@ -1,0 +1,75 @@
+@chatset'utf-8';
+body {
+    margin: 0 0;
+    padding: 0 0;
+    background: #eee;
+    color: #fff;
+    font-family: 微软雅黑;
+    overflow: hidden;
+}
+
+.body-wrap {
+    margin: -1px 0;
+    padding: 1px 0;
+}
+
+.header{
+    position:fixed;
+    width:100%;
+    height: 60px;
+    line-height: 60px;
+    background: #000;
+    color: #fff;
+    font-size: 20px;
+    text-align: center;
+    z-index: 10;
+}
+
+h1 {
+    position: absolute;
+    top: 50%;
+    margin-top: -50px;
+    width: 100%;
+    text-align: center;
+    font-size: 50px;
+    font-weight: 100;
+}
+
+.div1 {
+    width: 100%;
+    height: 400px;
+    background: #ed365a;
+}
+
+.div2 {
+    width: 100%;
+    height: 400px;
+    background: green;
+}
+
+.div3 {
+    width: 100%;
+    height: 400px;
+    background: #4C94F4;
+}
+
+.div4 {
+    width: 100%;
+    height: 400px;
+    background: yellow;
+}
+
+.div5 {
+    width: 100%;
+    height: 400px;
+    background: purple;
+}
+
+._d {
+    padding: 1px 0;
+    position: relative;
+}
+
+.c-black{
+    color: #000;
+}

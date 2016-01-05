@@ -1,0 +1,56 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>滚轮翻动</title>
+    <link rel="stylesheet" type="text/css" href="../../common/base.css">
+    <link rel="stylesheet" type="text/css" href="../../common/reset.css">
+    <style>
+    body,
+    p {
+        margin: 0;
+        padding: 0;
+        color: #fff;
+    }
+    
+    div {
+        width: 100%;
+    }
+    
+    .div1 {
+        background: #ed365a;
+        height: 500px;
+    }
+    
+    .div2 {
+        background: green;
+        height: 500px;
+        overflow: auto;
+    }
+    
+    .div3 {
+        background: #4eeee8;
+        height: 700px;
+    }
+    
+    .div4 {
+        background: #ed5a36;
+        height: 300px;
+    }
+    
+    .kdivide {}
+    </style>
+</head>
+
+<body>
+    <div id='div1' class="kdivide div1">this is div1...</div>
+    <div id='div2' class="kdivide div2">this is div2...</div>
+    <div id='div3' class="kdivide div3">this is div3...</div>
+    <div id='div4' class="kdivide div4">this is div4...</div>
+    <script type="text/javascript" src="../../common/jquery.min.js"></script>
+    <script type="text/javascript" src='jquery.mousewheel.js'></script>
+    <script type="text/javascript" src='index.js'></script>
+</body>
+
+</html>

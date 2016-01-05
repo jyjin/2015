@@ -1,0 +1,39 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>js ajax试验</title>
+</head>
+
+<body>
+    <script type="text/javascript" src="jquery.min.js"></script>
+    <script type="text/javascript">
+    //此例子需要服务器打开，配置ngnix或iis
+    // $.ajax({
+    // 	url:'data.json',
+    // 	success:function(data){
+    // 		document.write(data.name);
+    // 	}
+    // })
+
+    $.ajax('data.json').done(function(data){
+        $('body').append('<div id = "div">'+data.name+'</div>')
+    })
+
+    var xhr = new XMLHttpRequest();
+    // xhr.onreadystatechange = function(e) {
+    //     if (xhr.readyState == 4 && xhr.status == 200) {
+    //         console.log(xhr.responseText)
+    //         var result = eval('(' + xhr.responseText + ')');
+    //         document.write(result.name + '-' + result.age)
+    //     }
+    // }
+    // xhr.open('get', './data.json', false);
+    // xhr.send();
+    // var result = eval('(' + xhr.responseText + ')');
+    // document.write(result.name + '-' + result.age)
+    </script>
+</body>
+
+</html>

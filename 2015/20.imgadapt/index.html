@@ -1,0 +1,60 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>图片自适应,且水平垂直居中</title>
+    <style type="text/css">
+    body{height: 10000000000px;}
+    /*.a {
+    	position: relative;
+        margin: 100px auto;
+        width: 600px;
+        height: 800px;
+        background: gray;
+        line-height: 800px;
+        text-align: center;
+    }*/
+
+    .a{
+        position: absolute;
+        left: 50%; 
+        top: 0;
+        margin-left: -300px;
+        width: 600px;
+        height: 798px;
+        text-align: center;
+        background: #ed365a;
+    }
+
+    
+    .a img {
+        max-width: 600px;
+        max-height: 800px;
+    }
+    </style>
+    <script type="text/javascript" src='../../common/jquery.min.js'></script>
+</head>
+
+<body>
+    <a href="javascript:void(0)" id="start">start</a>
+    <a href="javascript:void(0)" id="stop">stop</a>
+    <a href="javascript:void(0)" id="reset">reset</a>
+    <a href="javascript:void(0)" id="300">300</a>
+
+    
+	<div id='wrap' class='a'>
+        <img id='img' src="home.jpg" alt="">
+    </div>
+   <!--  <div class='a'>
+        <img id='img1' src="iphone6.png" alt="">
+    </div>
+    <div class='a'>
+        <img id='img2' src="photo02.jpg" alt="">
+    </div>
+    <div class='a'>
+        <img id='img3' src="videointro.jpg" alt="">
+    </div> -->
+    <script type="text/javascript" src="index.js"></script>
+</body>
+</html>

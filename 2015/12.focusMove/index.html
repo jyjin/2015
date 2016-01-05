@@ -1,0 +1,50 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>聚焦位置&选中文本</title>
+</head>
+
+<body>
+	<input type="text" id="i" value="我是中国人"/>
+	<input type="text" id="j" value="我是中国人"/>
+	<input type="text" id="k" value="我是中国人"/>
+    <script type="text/javascript" src='../../common/jquery-1.10.2.min.js'></script>
+    <script type="text/javascript">
+    $.fn.setCursorPosition = function(position) {
+        if (this.length == 0) return this;
+        return $(this).setSelection(position, position);
+    }
+    $.fn.setSelection = function(selectionStart, selectionEnd) {
+        if (this.length == 0) return this;
+        input = this[0];
+        if (input.createTextRange) {
+            var range = input.createTextRange();
+            range.collapse(true);
+            range.moveEnd('character', selectionEnd);
+            range.moveStart('character', selectionStart);
+            range.select();
+        } else if (input.setSelectionRange) {
+            input.focus();
+            input.setSelectionRange(selectionStart, selectionEnd);
+        }
+        return this;
+    }
+    $.fn.focusEnd = function() {
+        this.setCursorPosition(this.val().length);
+        return this;
+    }
+    $(function(){
+
+    }); $('#i').setSelection(3, 5);
+        setTimeout(function() {
+            $('#j').focusEnd();
+            setTimeout(function() {
+                $('#k').setCursorPosition(2);
+            }, 3000);
+        }, 3000);
+    </script>
+</body>
+
+</html>

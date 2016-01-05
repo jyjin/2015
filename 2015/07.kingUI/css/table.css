@@ -1,0 +1,78 @@
+@charset "utf-8";
+
+.kt{
+	table-layout: fixed;
+	width: 100%;
+	border:1px solid #eaeaea;
+}
+
+.mt-head{
+	height: 42px;
+	background-color: #f5f8f9;
+}
+
+.col5{
+	width: 5%;
+}
+
+.col10{
+	width: 10%;
+}
+
+.col11{
+	width: 11%;
+}
+
+.col14{
+	width: 14%;
+}
+
+.col15{
+	width: 15%;
+}
+
+.col16{
+	width: 16%;
+}
+
+.col20{
+	width: 20%;
+}
+
+.col25{
+	width: 25%;
+}
+
+.col30{
+	width: 30%;
+}
+
+.col35{
+	width: 35%;
+}
+
+.col40{
+	width: 40%;
+}
+
+.col45{
+	width: 45%;
+}
+
+.col50{
+	width: 50%;
+}
+
+.col65{
+	width: 65%;
+}
+
+.mt td{
+	padding:0px 10px;
+	height: 40px;
+	border:solid #e9e9e9;
+	border-width: 0px 1px 1px 0px;
+}
+
+
+

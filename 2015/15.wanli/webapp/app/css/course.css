@@ -1,0 +1,232 @@
+
+.banner{
+    position: relative;
+    width: 100%;
+    height: 350px;
+    overflow: hidden;
+}
+.banner img.banner-bg{
+    position: absolute;
+    margin: auto;
+    width: 100%;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 1;
+}
+.serch-box{
+    position: absolute;
+    margin: auto;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 500px;
+    height: 60px;
+    z-index: 2;
+    background: url("../image/search-bg.png");
+    border-radius: 30px;
+}
+.serch-btn{
+    margin-right: 10px;
+    width: 60px;
+    height: 60px;
+    background: url("../image/search-btn.png") 50% 50% no-repeat;
+    background-size: 60% 70%;
+    cursor: pointer;
+}
+.input-field{
+    background: none;
+    width: 400px;
+    height: 55px;
+    border: none;
+    outline: none;
+    margin-left: 5px;
+    font-size: 22px;
+    color: #ffffff;
+}
+.tasty-course{
+    position: relative;
+    overflow: hidden;
+    background: #ffffff;
+    width: 100%;
+    height: auto;
+}
+.course-type{
+    margin: 90px auto;
+    width: 1000px;
+    position: relative;
+    z-index: 1;
+}
+.course-type li{
+    margin-top: 30px;
+    float: left;
+    overflow: hidden;
+    width: 50%;
+    height: 70px;
+    line-height: 35px;
+    background: url("../image/type-bg.png") repeat;
+}
+.course-type li a{
+    float: left;
+    padding: 5px 18px;
+    line-height: 25px;
+    color: #ffffff;
+    font-weight: bold;
+}
+.course-type li a:hover{
+    color: #fc4800;
+}
+.order-img{
+    position: relative;
+    width: 90px;
+    height: 70px;
+}
+.order-img img{
+    position: absolute;
+    margin: auto;
+    height: 30px;
+    top:0px;
+    bottom: 0px;
+    left:0px;
+    width: 75px;
+}
+.oi-school{
+    background: #1fd930;
+}
+.oi-habit{
+    background: #fe4a01;
+}
+.oi-job{
+    background: #01a1fc;
+}
+.oi-future{
+    background: #8c8c8c;
+}
+.type-item{
+    width: 400px;
+    height: 70px;
+}
+.hot-course,.week-course{
+    width: 1000px;
+    height: auto;
+    overflow: hidden;
+}
+.hc-header,.wc-header{
+    height: 45px;
+    width: 100%;
+}
+.hc-header a,.wc-header a{
+    padding: 0 10px;
+    float: left;
+    color: #8d8c8c;
+    line-height: 45px;
+}
+.wc-header a.wci-title{
+    color: #22c12d;
+}
+.hc-header a:hover{
+    color:#fd4900;
+}
+a.ci-title,a.wci-title{
+    padding-left: 28px;
+    color:#fd4900;
+    font-size: 20px;
+    background: url("../image/hc-icon.png") 0% 50% no-repeat;
+    background-size: 20% auto;
+}
+a.wci-title{
+    background-image: url("../image/wc-icon.png");
+    background-size: 15% auto;
+}
+a.lci-title{
+    background-image: url("../image/lc-icon.png");
+    background-size: 15% auto;
+}
+a.tci-title{
+    background-image: url("../image/teacher-icon.png");
+    background-size: 15% auto;
+}
+a.pci-title{
+    background-image: url("../image/pa-icon.png");
+    background-size: 15% auto;
+}
+.hc-items,.wc-items{
+    width: 1000px;
+    height: auto;
+    overflow: hidden;
+}
+.hc-items li{
+    border-radius: 3px;
+    position: relative;
+    margin-bottom: 10px;
+    padding: 5px;
+    background: #f5f5f5;
+    overflow: hidden;
+    float: left;
+    margin-right: 10px;
+    width: 230px;
+    height: 220px;
+}
+.hc-items li img{
+    width: 230px;
+    height: 150px;
+}
+.hc-items li p,.hide-desc p{
+    text-align: left;
+    line-height: 20px;
+    color: #8c8c8c;
+    height: 40px;
+    font-size: 12px;
+}
+.hc-items li p.hci-title,.hc-items li p.hci-title a,.hide-desc p.hci-title a{
+    height: 30px;
+    line-height: 30px;
+    color: #696969;
+    font-size: 14px;
+}
+.hc-items li p.hci-title a:hover{
+    color: #fc4800;
+}
+.hide-desc{
+    padding:0 10px;
+    position: absolute;
+    bottom: -40px;
+    left:0px;
+    background: url("../image/alpha-08.png");
+    width: 100%;
+    height: 70px;
+    z-index: 12;
+}
+.hide-desc p{
+    color: #f2f2f2;
+}
+.hide-desc p.hci-title{
+    height: 30px;
+}
+.hide-desc p.hci-title a{
+    color: #ffffff;
+}
+.wc-items li{
+    position: relative;
+    margin-right: 12px;
+    margin-bottom: 10px;
+    overflow: hidden;
+    float: left;
+    width: 325px;
+    height: 230px;
+}
+.wc-items li img{
+    width: 100%;
+    height: 100%;
+}
+.pa-items li{
+    height: 120px;
+}
+ul li img{
+    cursor: pointer;
+}
+.hide-desc p.hci-title a:hover{
+    color: #fc4800;
+}

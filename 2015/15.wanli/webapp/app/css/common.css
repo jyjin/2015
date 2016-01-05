@@ -1,0 +1,152 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: "微软雅黑";
+    font-size: 14px;
+    text-align: center;
+}
+.fl{
+    float: left;
+    
+}
+.fr{
+    float: right;
+}
+.mta{
+    margin: 0 auto;
+}
+.m-r0{
+    margin-right: 0 !important;
+}
+.m-l0{
+    margin-left: 0 !important;
+}
+a{
+    text-decoration: none;
+}
+ul,li,p{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+.main-search input::-webkit-input-placeholder {
+    color:#18be22;
+    font-family: "微软雅黑";
+    letter-spacing: 3px;
+}
+.header-wrap{
+    position: fixed;
+    z-index: 10000;
+    top: 0px;
+    left: 0px;
+    overflow: hidden;
+    width: 100%;
+    height: 70px;
+    background: url("../image/header-bg.png");
+}
+.header{
+    margin: 0 auto;
+    width: 1000px;
+    height: 100%;
+    background: none;
+
+}
+.menu-item li a.logo{
+    display: inline-block;
+    overflow: hidden;
+    height: 50px;
+    color:#747474;
+    font-size: 30px;
+}
+.menu-item li a.logo span{
+
+    margin-left: 10px;
+}
+.menu-item li a:hover,.menu-item li.cur-menu a{
+    color: #fc4800;
+}
+.logo img{
+    height: 100%;
+}
+.menu-item li{
+    float: left;
+    height: 70px;
+
+}
+.menu-item li a{
+    padding: 10px 28px;
+    display: inline-block;
+    float: left;
+    height: 40px;
+    line-height: 50px;
+    text-decoration: none;
+    font-size: 20px;
+    color:#18be22;
+}
+
+
+/*
+footer样式定义
+*/
+
+.footer{
+    padding-top: 28px;
+    height: 260px;
+    width: 100%;
+    background: #545454;
+}
+.footer-content{
+    width: 1000px;
+}
+.footer-content ul{
+    margin-right: 28px;
+}
+.wanli-school{
+    width: 200px;
+    color: #ffffff;
+}
+.reader{
+    width: 120px;
+}
+.wanli-school li{
+    height: 20px;
+    line-height: 20px;
+    text-align: left;
+}
+.wanli-school li.title{
+    height: 50px;
+    font-size: 18px;
+    line-height: 50px;
+    font-weight: bold;
+}
+.wanli-school li a{
+    color: #ffffff;
+    text-decoration: none;
+    text-align: left;
+    font-size: 12px;
+}
+.supported-service{
+    margin-top: 10px;
+}
+.supported-service li{
+    margin-top: 8px;
+    width: 200px;
+    height: 30px;
+    text-align: left;
+}
+.supported-service li img{
+    height: 100%;
+}
+.site-info{
+    width: 230px;
+    text-align: left;
+}
+.site-info li{
+    color: #b7b7b7;
+    line-height: 20px;
+    font-size: 12px;
+}
+.site-info li.title{
+    margin-top: 16px;
+    margin-bottom: 18px;
+}
